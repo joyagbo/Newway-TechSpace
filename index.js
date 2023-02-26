@@ -5,6 +5,7 @@ const bodyParser = require("body-parser");
 const session = require("express-session");
 const userRoutes = require("./router/users.routes.js");
 const communityRoutes = require("./router/communities.routes.js");
+const goalRoutes = require("./router/goals.routes.js");
 const port = 3000;
 const app = express();
 dotenv.config();
@@ -31,6 +32,7 @@ mongoose
 
 app.use("/users", userRoutes);
 app.use("/communities", communityRoutes);
+app.use("/goals", goalRoutes);
 
 app.listen(port, () => {
   console.log(`app listening on port ${port}`);
