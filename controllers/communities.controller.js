@@ -1,19 +1,19 @@
 const usersModel = require("../models/users.model.js");
 const communitiesModel = require("../models/communities.model.js");
 
-exports.getAllCommunities = async(req, res) => {
-    try {
-      const result = await communitiesModel.find();
-      res.status(200).json({
-        status: "success",
-        data: result,
-      });
-    } catch (error) {
-      res.status(400).json({
-        status: "fail",
-        message: error.message,
-      });
-    }
+exports.getAllCommunities = async (req, res) => {
+  try {
+    const result = await communitiesModel.find();
+    res.status(200).json({
+      status: "success",
+      data: result,
+    });
+  } catch (error) {
+    res.status(400).json({
+      status: "fail",
+      message: error.message,
+    });
+  }
 };
 
 exports.createCommunity = async (req, res) => {
@@ -60,9 +60,11 @@ exports.updateCommunity = (req, res) => {
     });
   }
 
-  communitiesModel.updateCommunity(
+  communitiesModel.findByIdAndUpdate(
     req.params.id,
-    new communitiesModel(req.body),
+    {
+      ...req.body,
+    },
     (err, data) => {
       if (err) {
         if (err.kind === "not_found") {
@@ -74,13 +76,15 @@ exports.updateCommunity = (req, res) => {
             message: "Error updating Community with id " + req.params.id,
           });
         }
-      } else res.send(data);
+      } else res.status(200).send({
+        message: `Data modified successfully`,
+      });;
     }
   );
 };
 
 exports.deleteCommunity = (req, res) => {
-  communitiesModel.deleteCommunity(req.params.id, (err, data) => {
+  communitiesModel.findByIdAndDelete(req.params.id, (err, data) => {
     if (err) {
       if (err.kind === "not_found") {
         res.status(404).send({

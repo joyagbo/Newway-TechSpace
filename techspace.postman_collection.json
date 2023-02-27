@@ -147,6 +147,35 @@
 					"response": []
 				},
 				{
+					"name": "communities update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"jagaban\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/communities/update/63fc74de1cfa2961b2d23a4d",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"communities",
+								"update",
+								"63fc74de1cfa2961b2d23a4d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "communities get all",
 					"request": {
 						"method": "GET",
@@ -160,6 +189,25 @@
 							"path": [
 								"communities",
 								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "communities delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/communities/63fbadef74cb4d0d46a98770",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"communities",
+								"63fbadef74cb4d0d46a98770"
 							]
 						}
 					},
@@ -204,13 +252,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:3000/communities/",
+							"raw": "localhost:3000/goals/",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
-								"communities",
+								"goals",
 								""
 							]
 						}
