@@ -1,0 +1,223 @@
+{
+	"info": {
+		"_postman_id": "0c4513db-b3e5-448c-87d3-53c1b5df16c9",
+		"name": "techspace",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7375657"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "users register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"jane@gmail.com\",\r\n    \"password\": \"jane@123\",\r\n    \"phonenumber\": \"0780674459\",\r\n    \"city\": \"kigali\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/users/register",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "users login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"jane@gmail.com\",\r\n    \"password\": \"jane@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/users/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update profile",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"hello@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/users/profile/63fba7994f717cabeb336bb3",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"profile",
+								"63fba7994f717cabeb336bb3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "users get all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/users/",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Communities",
+			"item": [
+				{
+					"name": "communities create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"gdsc\",\r\n    \"description\": \"intended to connect, learn and grow\",\r\n    \"creator\": \"63fba7994f717cabeb336bb3\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/communities/create",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"communities",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "communities get all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/communities/",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"communities",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Goals",
+			"item": [
+				{
+					"name": "goals create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"days\": 5,\r\n    \"start_date\": \"2023-02-26\",\r\n    \"creator\": \"63fba7994f717cabeb336bb3\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/goals/create",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"goals",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "goals get all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/communities/",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"communities",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
