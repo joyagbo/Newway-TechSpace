@@ -60,9 +60,9 @@ exports.updateGoal = (req, res) => {
     });
   }
 
-  goalsModel.updateGoal(
+  goalsModel.findByIdAndUpdate(
     req.params.id,
-    new goalsModel(req.body),
+    {...req.body},
     (err, data) => {
       if (err) {
         if (err.kind === "not_found") {
@@ -74,13 +74,17 @@ exports.updateGoal = (req, res) => {
             message: "Error updating Goal with id " + req.params.id,
           });
         }
-      } else res.send(data);
+      } else res.status(404).send({
+        message: `Not found Community with id ${req.params.id}.`,
+      });res.status(200).send({
+        message: `Goal modified successfully.`,
+      });;
     }
   );
 };
 
 exports.deleteGoal = (req, res) => {
-  goalsModel.deleteGoal(req.params.id, (err, data) => {
+  goalsModel.findByIdAndDelete(req.params.id, (err, data) => {
     if (err) {
       if (err.kind === "not_found") {
         res.status(404).send({
