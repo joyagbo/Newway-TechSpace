@@ -74,9 +74,7 @@ exports.updateGoal = (req, res) => {
             message: "Error updating Goal with id " + req.params.id,
           });
         }
-      } else res.status(404).send({
-        message: `Not found Community with id ${req.params.id}.`,
-      });res.status(200).send({
+      }else res.status(200).send({
         message: `Goal modified successfully.`,
       });;
     }
